@@ -47,6 +47,15 @@ function App() {
 
   const submitTodoHandler = (e) => {
     e.preventDefault();
+
+    if (inputState === "") {
+      return alert("Agregue contenido a su tarea!")
+    }
+
+    if (todos.some((todo) => todo.text === inputState)) {
+      return alert("Este contenido ya está agregado!")
+    }
+
     setTodos([
       ...todos,
       { text: inputState, completed: false, id: Date.now() },
