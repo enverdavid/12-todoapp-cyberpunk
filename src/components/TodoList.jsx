@@ -1,12 +1,12 @@
 import React from 'react';
 import { TodoItem } from './TodoItem';
 
-const TodoList = ({todos, setTodos}) => {
+const TodoList = ({todos, setTodos, filteredTodos}) => {
 
     return (
-        <div className="w-full">
+        <div className="w-full overflow-auto">
             <ul>
-                {todos.map((todo) => {
+                {filteredTodos.map((todo) => {
                    return (
                     <TodoItem 
                         key={todo.id} 

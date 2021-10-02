@@ -6,12 +6,26 @@ const TodoItem = ({todo, setTodos, todos }) => {
     setTodos(todos.filter((el) => el.id !== todo.id));
   };
 
+  const completeHandler = () => {
+      setTodos(todos.map((el) => {
+          if (el.id === todo.id) {
+              return {...el, completed: !el.completed}
+          }
+          return el
+      }))
+  }
+
   return (
-    <div className="flex justify-between bg-white mb-2">
-      <li className="bg-white m-1">{todo.text}</li>
+    <div className="flex justify-between bg-cyberpunk_light_blue text-white mb-3">
+      <li 
+        className={`m-2 ${todo.completed ? "line-through text-gray-600" : ""}`}>{todo.text}</li>
       <div className="flex ">
-        <button className="bg-green-300 px-4">Complete</button>
-        <button onClick={deleteHandler} className="bg-red-300 px-4">Trash</button>
+        <button 
+            onClick={completeHandler} 
+            className={`px-4 ${ todo.completed ? "bg-cyberpunk_green text-black" : "bg-cyberpunk_green" }`} >
+                {todo.completed ? "✓" : "✓"}
+        </button>
+        <button onClick={deleteHandler} className="bg-cyberpunk_pink px-4">X</button>
       </div>
     </div>
   );

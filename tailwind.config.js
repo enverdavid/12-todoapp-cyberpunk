@@ -6,9 +6,10 @@ module.exports = {
     extend: {
       colors: {
         // Configure your color palette here
-        light_brown: "#FCDEC0",
-        medium_brown: "#C68B59",
-        dark_brown: "#865439",
+        cyberpunk_pink: "#FF66C4",
+        cyberpunk_green: "#63FFEC",
+        cyberpunk_light_blue: "#242E3C",
+        cyberpunk_dark_blue: "#101822",
         sky_blue: "#8FC1D4"
       }
     },
